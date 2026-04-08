@@ -27,7 +27,7 @@ int main() {
             r_acad = "Excelencia academica (Sobresaliente)";
         } else if (promedio >= 8 && asistencia >= 85) {
             nivel = 2;
-            r_acad = "Buen rendimiento académico";
+            r_acad = "Buen rendimiento acadÃ©mico";
         } else {
             nivel = 1;
             r_acad = "Rendimiento aceptable";
