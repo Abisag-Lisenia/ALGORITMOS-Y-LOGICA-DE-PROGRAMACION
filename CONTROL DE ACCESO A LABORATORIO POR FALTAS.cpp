@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int tieneCredencial, perteneceCurso, minutosTarde, faltas;
+
+    cout << "--- SISTEMA DE CONTROL DE ACCESO ---" << endl;
+    cout << "Trae credencial? (1: Si, 0: No): "; cin >> tieneCredencial;
+    cout << "Pertenece al curso actual? (1: Si, 0: No): "; cin >> perteneceCurso;
+    cout << "Minutos de tardanza: "; cin >> minutosTarde;
+    cout << "Faltas acumuladas: "; cin >> faltas;
+
+    cout << "\nRESULTADO DEL ACCESO:" << endl;
+    cout << "------------------------------------" << endl;
+
+    if (tieneCredencial == 0 || perteneceCurso == 0) {
+        cout << "Estado: No puede ingresar" << endl;
+        cout << "Motivo: Incumplimiento de requisitos obligatorios (Credencial/Curso)" << endl;
+        cout << "Prioridad: Alta" << endl;
+    }
+    else if (faltas >= 5) {
+        cout << "Estado: No puede ingresar" << endl;
+        cout << "Motivo: Exceso critico de faltas (5 o mas)" << endl;
+        cout << "Prioridad: Alta" << endl;
+    }
+    else if (minutosTarde > 10) {
+        cout << "Estado: No puede ingresar" << endl;
+        cout << "Motivo: Supero el tiempo limite de 10 minutos" << endl;
+        cout << "Prioridad: Media" << endl;
+    }
+    else if ((minutosTarde > 0 && minutosTarde <= 10) || (faltas >= 3)) {
+        cout << "Estado: Ingresa con advertencia" << endl;
+        cout << "Motivo: Retraso menor o faltas acumuladas (3 a 4)" << endl;
+        cout << "Prioridad: Media" << endl;
+    }
+    else {
+        cout << "Estado: Ingresa sin problema" << endl;
+        cout << "Motivo: Cumplimiento total de normas" << endl;
+        cout << "Prioridad: Baja" << endl;
+    }
+    cout << "------------------------------------" << endl;
+
+    return 0;
+}
